@@ -1,0 +1,49 @@
+package com.example.undostress.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.undostress.pojo.SingleUserOutput;
+import com.example.undostress.pojo.Support;
+import com.example.undostress.pojo.User;
+import com.example.undostress.service.UserService;
+
+import jakarta.websocket.server.PathParam;
+
+@RestController
+public class UserController {
+
+	@Autowired
+	UserService userService;
+	
+	@Autowired
+	Support support;
+	
+	@GetMapping("/api/users")
+	public ResponseEntity< List<User>> getAll(@RequestParam int page){
+		return new ResponseEntity<List<User>>( userService.getAllUsers(page),HttpStatus.OK);
+		}
+	@GetMapping("api/users/${id}")
+	public ResponseEntity< SingleUserOutput> getUser(@PathParam("id") int id) {
+		
+		
+		return new ResponseEntity< SingleUserOutput>(new SingleUserOutput(userService.get(id),support),HttpStatus.OK);
+		
+	}
+
+	@PostMapping("/api/users")
+	public User createUser(@RequestBody User u) {
+		userService.saveUser(u);
+		return u;
+	}
+
+}

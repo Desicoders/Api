@@ -1,0 +1,25 @@
+package com.example.undostress.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.undostress.exceptions.UserNotFoundException;
+import com.example.undostress.pojo.User;
+import com.example.undostress.repository.UserRepo;
+
+@Service
+public class UserService {
+	
+	@Autowired
+	UserRepo userRepo;
+	
+	public User saveUser(User u) {
+		userRepo.save(u);
+		return u;
+	}
+	public User get(Integer id) {
+		return userRepo.findById(id).orElseThrow(()->new UserNotFoundException("NO user with id ="+id));
+
+	}
+
+}

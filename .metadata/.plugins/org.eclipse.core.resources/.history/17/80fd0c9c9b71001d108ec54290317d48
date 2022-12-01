@@ -1,0 +1,5 @@
+package com.example.undostress.exceptions;
+
+public class NoPswdExptn extends Exception {
+
+}

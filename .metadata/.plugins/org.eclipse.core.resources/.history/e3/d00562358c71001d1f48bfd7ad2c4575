@@ -1,0 +1,19 @@
+package com.example.undostress.pojo;
+
+import java.security.Timestamp;
+
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class User {
+	Integer id;
+	String email;
+	String job;
+	String firstName;
+	String lastName;
+	
+	@UpdateTimestamp
+	Timestamp timestamp;
+}

@@ -1,0 +1,13 @@
+package com.example.undostress.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.undostress.pojo.EmailAndPswd;
+import com.example.undostress.pojo.User;
+
+@Repository
+public interface UserRepo  extends JpaRepository<User, Integer>{
+	User findByEmailAndPswd(EmailAndPswd EAndP);
+
+}

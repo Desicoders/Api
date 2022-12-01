@@ -1,0 +1,7 @@
+package com.example.undostress.exceptions;
+
+public class NoPswdExptn extends RuntimeException {
+	NoPswdExptn(Sring msg){
+		super(msg);
+	}
+}

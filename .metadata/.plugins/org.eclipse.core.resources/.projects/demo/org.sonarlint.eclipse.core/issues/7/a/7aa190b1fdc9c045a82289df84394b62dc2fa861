@@ -1,0 +1,7 @@
+
+
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÕÄş…ûÿÿÿÿ8¥ıŠóÌ0HRMINORZ
+CODE_SMELL
+v
+java:S1128"DRemove this unused import 'org.springframework.http.HttpStatusCode'.(®å™Õ8¥ıŠóÌ0HRMINORZ
+CODE_SMELL

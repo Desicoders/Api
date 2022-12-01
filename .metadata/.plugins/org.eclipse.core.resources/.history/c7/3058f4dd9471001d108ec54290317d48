@@ -1,0 +1,13 @@
+package com.example.undostress.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.undostress.repository.GetAllOutputUsers;
+
+@Service
+public class GetAllUsersOutputService {
+	@Autowired
+	GetAllOutputUsers getAllOutputUsers;
+
+}

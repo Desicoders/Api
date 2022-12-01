@@ -1,0 +1,10 @@
+package com.example.undostress.pojo;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Support {
+	        String url= "https://reqres.in/#support-heading";
+	       String text ="To keep ReqRes free, contributions towards server costs are appreciated!";
+	
+}
